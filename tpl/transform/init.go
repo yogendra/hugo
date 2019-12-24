@@ -102,7 +102,12 @@ func init() {
 				{`{{ "hello = \"Hello World\"" | resources.FromString "data/greetings.toml" | transform.Unmarshal }}`, "map[hello:Hello World]"},
 			},
 		)
-
+		ns.AddMethodMapping(ctx.PlantumlTextFormat,
+			[]string{"plantuml_text_format"},
+			[][2]string{
+				{`{{ platuml_text_format .Inner }}`, `SoWkIImgAStDuN9KqBLJS5AmKl18pSd91t9jT27SJ8MGZDIYL4KkXzIy5A1A0000`},
+			},
+		)
 		return ns
 
 	}
